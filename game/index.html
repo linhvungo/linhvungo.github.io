@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=600 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=360 height=640 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -102,32 +102,9 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        // Always maintain 9:16 aspect ratio and fill the screen
 
-        function resizeCanvas() {
-          var windowWidth = window.innerWidth;
-          var windowHeight = window.innerHeight;
-          var targetRatio = 9 / 16;
-          var windowRatio = windowWidth / windowHeight;
-
-          var canvasWidth, canvasHeight;
-
-          if (windowRatio > targetRatio) {
-            // Window is wider than 9:16 - fit to height
-            canvasHeight = windowHeight;
-            canvasWidth = canvasHeight * targetRatio;
-          } else {
-            // Window is taller than 9:16 - fit to width
-            canvasWidth = windowWidth;
-            canvasHeight = canvasWidth / targetRatio;
-          }
-
-          canvas.style.width = canvasWidth + "px";
-          canvas.style.height = canvasHeight + "px";
-        }
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        canvas.style.width = "360px";
+        canvas.style.height = "640px";
       }
 
       loadingBar.style.display = "block";
